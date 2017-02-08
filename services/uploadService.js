@@ -50,6 +50,7 @@ let writePhoto = (file, photo)=> {
     return new Promise((resolve, reject) => {
         let stream = fs.createWriteStream(photo);
         const imHandle = im().quality(90);
+        //todo 改变文件类型
         file.pipe(imHandle).pipe(stream);
         return resolve();
     });
